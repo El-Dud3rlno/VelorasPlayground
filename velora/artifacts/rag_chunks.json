@@ -1,0 +1,11 @@
+[
+  {"chunk_id":"CH-001","source":"HT-001","text":"Invoice exception segment defines queue ownership as Ops East with a 24h SLA and escalation at 80 percent.","tags":["workflows","segment","sla"]},
+  {"chunk_id":"CH-002","source":"HT-001","text":"Verification segment requires a test exception to confirm queue assignment, timer start, and escalation behavior.","tags":["verification","segment","audit"]},
+  {"chunk_id":"CH-003","source":"HT-002","text":"Compliance exception closure segment includes remediation summary, evidence attachments, and owner attestation.","tags":["compliance","segment","evidence"]},
+  {"chunk_id":"CH-004","source":"HT-002","text":"After completion, status changes to Review Pending and appears in weekly snapshot reports.","tags":["status","reporting"]},
+  {"chunk_id":"CH-005","source":"HT-003","text":"Weekly snapshot segment refreshes control metrics, delayed indicators, and leadership commentary.","tags":["reporting","segment"]},
+  {"chunk_id":"CH-006","source":"HT-004","text":"Integration registration segment stores endpoint type, owner team, credential reference, and heartbeat test result.","tags":["integrations","segment","dependencies"]},
+  {"chunk_id":"CH-007","source":"HT-004","text":"Verification checks sample payload receipt and monitoring logs after activation.","tags":["verification","logs"]},
+  {"chunk_id":"CH-008","source":"HT-005","text":"Monthly audit evidence segment includes logs, report exports, manifest generation, and sign-off.","tags":["audit","segment","evidence"]},
+  {"chunk_id":"CH-009","source":"HT-005","text":"Audit manifest verification confirms checksum values and artifact links for each control.","tags":["audit","verification"]}
+]
