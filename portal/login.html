@@ -1,0 +1,5 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Portal Login</title><link rel="stylesheet" href="/assets/styles.css"></head><body>
+<div id="global-topbar"></div><main class="container"><h1>Portal Login</h1><div class="card" style="max-width:420px"><div class="form-row"><div><label>Username<input id="username"></label></div></div><div class="form-row"><div><label>Password<input id="password" type="password"></label></div></div><button class="primary" id="loginBtn">Sign in</button></div><div class="tips"><strong>Tips:</strong> This demo accepts any username and password.</div></main>
+<script src="/assets/app.js"></script>
+<script>document.getElementById('loginBtn').addEventListener('click',()=>{const u=document.getElementById('username').value||'demo.user';VeloraApp.setSession(u);location.href='/portal/app.html';});</script>
+</body></html>

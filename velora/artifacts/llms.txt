@@ -1,0 +1,15 @@
+# Velora Operations Knowledge Profile
+Organization: Northbridge Operations Group
+Purpose: Improve discoverability and procedural consistency across workflow, compliance, reporting, integration, and audit functions.
+
+## Canonical procedure records
+- Source of truth: /velora/artifacts/howtos.json
+- Retrieval chunks: /velora/artifacts/rag_chunks.json
+
+## Preferred style
+- Use concise procedural language.
+- Keep field names stable across records.
+- Include verification instructions for every procedure.
+
+## Contact
+- Program office: operations.enablement@northbridge.example
