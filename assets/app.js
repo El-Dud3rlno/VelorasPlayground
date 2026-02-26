@@ -3,8 +3,17 @@
   const MODE_KEY = 'velora_demo_mode';
   const SESSION_KEY = 'velora_session';
 
+  function getRootPrefix() {
+    const path = window.location.pathname;
+    if (path.includes('/public/') || path.includes('/portal/') || path.includes('/velora/')) return '../';
+    return './';
+  }
+
   const App = {
     keys: { THEME_KEY, MODE_KEY, SESSION_KEY },
+    getRootPrefix,
+    toRootPath: (subpath) => `${getRootPrefix()}${subpath}`,
+    artifactPath: (name) => `${getRootPrefix()}velora/artifacts/${name}`,
     getTheme: () => localStorage.getItem(THEME_KEY) || 'light',
     setTheme: (theme) => localStorage.setItem(THEME_KEY, theme),
     getMode: () => localStorage.getItem(MODE_KEY) || 'before',
@@ -14,7 +23,7 @@
     clearSession: () => localStorage.removeItem(SESSION_KEY),
     requireAuth: () => {
       if (!App.getSession()) {
-        window.location.href = '/portal/login.html';
+        window.location.href = App.toRootPath('portal/login.html');
       }
     },
     applyUiState: () => {
@@ -28,14 +37,16 @@
         el.className = `badge ${after ? 'after' : 'before'}`;
       });
       const modeLabels = document.querySelectorAll('[data-mode-label]');
-      modeLabels.forEach((el) => el.textContent = App.getMode() === 'after' ? 'After' : 'Before');
+      modeLabels.forEach((el) => {
+        el.textContent = App.getMode() === 'after' ? 'After' : 'Before';
+      });
     },
     initTopbar: () => {
       const holder = document.getElementById('global-topbar');
       if (!holder) return;
       holder.innerHTML = `
         <div class="topbar">
-          <div><a href="/index.html" class="brand">Velora Proving Ground</a></div>
+          <div><a href="${App.toRootPath('index.html')}" class="brand">Velora Proving Ground</a></div>
           <div class="topbar-controls">
             <button id="themeToggle">Theme</button>
             <button id="modeToggle">Demo Mode: <span data-mode-label></span></button>
@@ -43,13 +54,11 @@
           </div>
         </div>`;
       document.getElementById('themeToggle').addEventListener('click', () => {
-        const next = App.getTheme() === 'dark' ? 'light' : 'dark';
-        App.setTheme(next);
+        App.setTheme(App.getTheme() === 'dark' ? 'light' : 'dark');
         App.applyUiState();
       });
       document.getElementById('modeToggle').addEventListener('click', () => {
-        const next = App.getMode() === 'after' ? 'before' : 'after';
-        App.setMode(next);
+        App.setMode(App.getMode() === 'after' ? 'before' : 'after');
         App.applyUiState();
       });
       App.applyUiState();
