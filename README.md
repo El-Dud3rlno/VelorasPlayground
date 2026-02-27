@@ -1,14 +1,13 @@
-# Velora Proving Ground Demo
+# Velora's Playground
 
-Static multi-page demo that contrasts enterprise operations before and after Velora structured intelligence outputs.
+A pure static demo website designed for storytelling walkthroughs.
 
-## Run locally
+## Run
 
-### Option 1: open directly
-Open `index.html` in your browser.
+Open directly:
+- `index.html`
 
-### Option 2: static server (recommended for fetch-based artifact loading)
-From the repo root:
+Or use a static server:
 
 ```bash
 python3 -m http.server 8080
@@ -16,25 +15,12 @@ python3 -m http.server 8080
 
 Then visit:
 - `http://localhost:8080/index.html`
-- `http://localhost:8080/public/index.html`
-- `http://localhost:8080/portal/login.html`
-- `http://localhost:8080/velora/index.html`
+- `http://localhost:8080/pipeline.html`
+- `http://localhost:8080/activity.html`
+- `http://localhost:8080/insights.html`
 
-## Demo behavior
-- Theme is persisted in `localStorage` key `velora_theme`.
-- Demo mode (Before or After) is persisted in `localStorage` key `velora_demo_mode`.
-- Mock portal session is persisted in `localStorage` key `velora_session`.
-
-## Self-tests
-A lightweight self-test script is included at `/assets/selftest.js`.
-
-Run in browser devtools console on any page served by the static server:
-
-```js
-await import('/assets/selftest.js')
-```
-
-Expected checks:
-- localStorage keys exist after toggles
-- `/velora/artifacts/howtos.json` loads and is an array
-- rag chunk search finds results for `segment`
+## Demo notes
+- Contacts are shown as cinematic cards on the home page.
+- Clicking a contact opens FOE activity records in a side drawer.
+- Data is seeded into `localStorage` and no backend is used.
+- Theme preference is stored in `localStorage` key `crm_theme`.
