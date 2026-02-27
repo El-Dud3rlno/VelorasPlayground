@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Portal Dashboard</title><link rel="stylesheet" href="../assets/styles.css"></head><body>
+<div id="global-topbar"></div><main class="container layout">
+<aside class="sidebar card"><h3>Portal</h3><div class="menu"><a class="active" href="./app.html">Dashboard</a><a href="./workflows.html">Workflows</a><a href="./compliance.html">Compliance</a><a href="./reporting.html">Reporting</a><a href="./integrations.html">Integrations</a><a href="./audit.html">Audit</a><a href="./knowledge-before.html">Knowledge (Manual SOP)</a><a href="../velora/guide.html">Knowledge (Velora Guide)</a></div><button id="logoutBtn">Sign out</button></aside>
+<section>
+<h1>Operations Dashboard</h1>
+<div class="grid grid-3"><div class="card"><h3>Open Work Items</h3><p>128</p></div><div class="card"><h3>Compliance Due This Week</h3><p>14</p></div><div class="card"><h3>Escalations</h3><p>6</p></div></div>
+<div class="card before-only"><h3>AI Readiness: <span class="status-low">Low</span></h3><p>Knowledge exists in manual SOPs and duplicated pages. Teams rely on tribal navigation patterns.</p></div>
+<div class="card after-only"><h3>AI Readiness: <span class="status-high">High</span></h3><p>Velora outputs connected. Procedures include objective, dependencies, and verification criteria.</p></div>
+<div class="tips"><strong>Tips:</strong> Compare the two Knowledge links to inspect before and after operating guidance.</div>
+</section></main><script src="../assets/app.js"></script><script>VeloraApp.requireAuth();document.getElementById('logoutBtn').onclick=()=>{VeloraApp.clearSession();location.href='./login.html';};</script></body></html>
