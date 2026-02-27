@@ -1,50 +1,14 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Velora's Playground</title>
-  <link rel="stylesheet" href="assets/styles.css" />
-</head>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Velora's Playground</title><link rel="stylesheet" href="assets/styles.css" /></head>
 <body>
-  <header class="topbar">
-    <div class="brand">Velora's Playground <span class="brand-pill">DEMO</span></div>
-    <nav class="nav-links">
-      <a class="active" href="index.html">Contacts</a>
-      <a href="pipeline.html">Pipeline</a>
-      <a href="activity.html">Activity</a>
-      <a href="insights.html">Insights</a>
-    </nav>
-    <button id="themeToggle" class="btn">Theme</button>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <h1>Velora's Playground</h1>
-      <p>Use this demo workspace to walk through customer operations workflows. Contacts are presented as cinematic cards, and each card opens FOE activity records for a believable walkthrough.</p>
-      <div class="tips"><strong>Tips:</strong> Click any contact card to show a side-panel narrative of calls, tasks, and milestones.</div>
-    </section>
-
-    <section class="row">
-      <div class="metric"><div class="label">Accounts in motion</div><div class="value">42</div></div>
-      <div class="metric"><div class="label">Open renewals</div><div class="value">11</div></div>
-      <div class="metric"><div class="label">Risk accounts</div><div class="value">4</div></div>
-      <div class="metric"><div class="label">Forecast ARR</div><div class="value">$3.2M</div></div>
-    </section>
-
-    <h2 class="section-title">Contact Library</h2>
-    <div class="searchbar">
-      <input id="contactSearch" placeholder="Search contact, company, segment, owner" />
-    </div>
-    <section id="contactRail" class="card-rail"></section>
-    <p class="footer-note">This demo uses seeded static data and localStorage only. No backend required.</p>
-  </main>
-
-  <aside id="foeDrawer" class="drawer">
-    <button class="btn" id="closeDrawer">Close</button>
-    <div id="foeBody"></div>
-  </aside>
-
-  <script src="assets/app.js"></script>
-</body>
-</html>
+<header class="topbar"><div class="brand">Velora's Playground <span class="brand-pill">DEMO</span></div><nav class="nav-links"><a class="active" href="index.html">Contacts</a><a href="pipeline.html">Pipeline</a><a href="activity.html">Activity</a><a href="insights.html">Insights</a></nav><button id="themeToggle" class="btn">Theme</button></header>
+<main class="container">
+<section class="hero"><h1>Velora's Playground</h1><p>Interactive customer operations workspace with editable records, persistent notes, and demo playbook configuration.</p><div class="tips"><strong>Tips:</strong> Click a contact card, add notes, then edit owner or stage to show end-to-end account management depth.</div></section>
+<section class="row"><div class="metric"><div class="label">Accounts in motion</div><div class="value">42</div></div><div class="metric"><div class="label">Open renewals</div><div class="value">11</div></div><div class="metric"><div class="label">Risk accounts</div><div class="value">4</div></div><div class="metric"><div class="label">Forecast ARR</div><div class="value">$3.2M</div></div></section>
+<h2 class="section-title">Contact Library</h2><div class="searchbar"><input id="contactSearch" placeholder="Search contact, company, segment, owner" /></div><section id="contactRail" class="card-rail"></section><p class="footer-note">All changes are stored locally for demo continuity.</p>
+</main>
+<aside id="foeDrawer" class="drawer"><button class="btn" id="closeDrawer">Close</button><div id="foeBody"></div></aside>
+<div id="editModal" class="modal"><div class="modal-card"><h3>Edit Contact Profile</h3><div class="stack"><input id="editName" placeholder="Name"/><input id="editOwner" placeholder="Owner"/><input id="editStage" placeholder="Stage"/><input id="editHealth" placeholder="Health"/></div><div class="stack"><button class="btn" id="saveEditBtn">Save changes</button><button class="btn" id="closeEditBtn">Cancel</button></div></div></div>
+<script src="assets/app.js"></script>
+</body></html>

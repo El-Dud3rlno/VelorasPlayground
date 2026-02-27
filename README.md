@@ -22,5 +22,7 @@ Then visit:
 ## Demo notes
 - Contacts are shown as cinematic cards on the home page.
 - Clicking a contact opens FOE activity records in a side drawer.
+- You can add persistent account notes and edit profile fields (name, owner, stage, health).
+- Insights includes a 3-step configuration wizard with saved demo playbook settings.
 - Data is seeded into `localStorage` and no backend is used.
 - Theme preference is stored in `localStorage` key `crm_theme`.
