@@ -1,0 +1,52 @@
+[
+  {
+    "metadata": {"id": "HT-001", "title": "Configure invoice exception workflow", "owner": "Ops PMO", "domain": "workflows"},
+    "business_objective": "Reduce invoice exception resolution time while preserving policy controls.",
+    "preconditions": ["User has Workflow Admin role", "Vendor master data sync completed", "Queue naming convention approved"],
+    "navigation_path": "Portal > Workflows > New Workflow Request",
+    "steps": ["Create workflow named Invoice Exceptions", "Assign owner group Ops East", "Set SLA target to 24h", "Enable escalation at 80 percent of SLA", "Publish workflow and notify queue owners"],
+    "system_behavior_after_completion": "New exceptions route to the configured queue and timers start automatically.",
+    "verification_procedure": "Submit a test exception and verify queue assignment, SLA countdown, and escalation trigger in Audit.",
+    "dependencies": ["ERP integration", "Queue ownership matrix", "Audit module"]
+  },
+  {
+    "metadata": {"id": "HT-002", "title": "Close compliance exception with evidence", "owner": "GRC", "domain": "compliance"},
+    "business_objective": "Resolve open compliance exceptions with documented remediation evidence.",
+    "preconditions": ["Exception record exists", "Control owner assigned", "Evidence repository accessible"],
+    "navigation_path": "Portal > Compliance > Exceptions",
+    "steps": ["Open target exception record", "Add remediation summary and target date", "Attach evidence files", "Request owner attestation", "Mark exception ready for review"],
+    "system_behavior_after_completion": "Exception status changes to Review Pending and appears in weekly compliance snapshot.",
+    "verification_procedure": "Confirm the exception appears in reporting with attachments and attestation timestamp.",
+    "dependencies": ["Compliance module", "Document repository", "Reporting module"]
+  },
+  {
+    "metadata": {"id": "HT-003", "title": "Publish weekly compliance snapshot", "owner": "Strategy Ops", "domain": "reporting"},
+    "business_objective": "Deliver consistent weekly compliance visibility to leadership.",
+    "preconditions": ["Control attestation data is current", "Exception statuses updated", "Distribution list is active"],
+    "navigation_path": "Portal > Reporting > Compliance Snapshot",
+    "steps": ["Load current week template", "Refresh control and exception metrics", "Review delayed indicators", "Add commentary on risk items", "Publish report and send digest"],
+    "system_behavior_after_completion": "Snapshot is stored in report history and digest notifications are dispatched.",
+    "verification_procedure": "Verify report timestamp, metric totals, and delivery logs for the leadership group.",
+    "dependencies": ["Reporting module", "Compliance data feed", "Notification service"]
+  },
+  {
+    "metadata": {"id": "HT-004", "title": "Register a new integration endpoint", "owner": "Integration Ops", "domain": "integrations"},
+    "business_objective": "Add a new system endpoint with ownership and connectivity checks.",
+    "preconditions": ["Endpoint spec approved", "Owner team identified", "Network access permitted"],
+    "navigation_path": "Portal > Integrations > Add Endpoint",
+    "steps": ["Enter system name and endpoint type", "Record owner team and support channel", "Submit connectivity test", "Store credential reference ID", "Mark integration active"],
+    "system_behavior_after_completion": "Integration appears in Connected Systems and emits heartbeat checks.",
+    "verification_procedure": "Confirm successful heartbeat and sample payload receipt in integration logs.",
+    "dependencies": ["Integration module", "Credential vault", "Monitoring logs"]
+  },
+  {
+    "metadata": {"id": "HT-005", "title": "Prepare monthly audit evidence pack", "owner": "Internal Audit", "domain": "audit"},
+    "business_objective": "Assemble an auditable evidence pack for monthly control review.",
+    "preconditions": ["Audit period closed", "Required controls list finalized", "Evidence owners confirmed"],
+    "navigation_path": "Portal > Audit > Export Evidence",
+    "steps": ["Select audit period and control set", "Include workflow and compliance logs", "Attach report exports", "Generate evidence manifest", "Submit pack for audit lead sign-off"],
+    "system_behavior_after_completion": "Evidence pack is versioned and tracked with immutable hash metadata.",
+    "verification_procedure": "Open manifest and confirm all controls have linked artifacts and checksum values.",
+    "dependencies": ["Audit module", "Reporting exports", "Control library"]
+  }
+]

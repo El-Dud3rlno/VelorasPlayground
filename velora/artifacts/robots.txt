@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /portal/
+Disallow: /internal/
+
+Sitemap: https://example.org/sitemap.xml

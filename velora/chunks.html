@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chunk Explorer</title><link rel="stylesheet" href="../assets/styles.css"></head><body>
+<div id="global-topbar"></div><main class="container"><nav class="page-nav"><a href="./index.html">Outputs Home</a><a href="./guide.html">Guide</a></nav><h1>RAG Chunk Explorer</h1><div class="card"><label>Search chunks<input id="q" placeholder="Try segment"></label></div><div id="results" class="grid"></div></main>
+<script src="../assets/app.js"></script>
+<script>
+(async()=>{const chunks=await VeloraApp.fetchJson('./artifacts/rag_chunks.json');const q=document.getElementById('q');const results=document.getElementById('results');function run(){const s=q.value.toLowerCase();const filtered=chunks.filter(c=>JSON.stringify(c).toLowerCase().includes(s));results.innerHTML=filtered.map(c=>`<div class='card'><strong>${c.chunk_id}</strong><p>${c.text}</p><small>source: ${c.source} | tags: ${c.tags.join(', ')}</small></div>`).join('')||'<div class="card">No results</div>';}
+q.addEventListener('input',run);q.value='segment';run();})();
+</script></body></html>
