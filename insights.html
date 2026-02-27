@@ -3,17 +3,16 @@
 <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Velora's Playground Insights</title><link rel="stylesheet" href="assets/styles.css" /></head>
 <body>
 <header class="topbar"><div class="brand">Velora's Playground <span class="brand-pill">DEMO</span></div><nav class="nav-links"><a href="index.html">Contacts</a><a href="pipeline.html">Pipeline</a><a href="activity.html">Activity</a><a class="active" href="insights.html">Insights</a></nav><button id="themeToggle" class="btn">Theme</button></header>
+<div id="commandPalette" class="command-palette"><input id="commandInput" placeholder="Type a command..."/><div id="commandList" class="stack"></div></div>
 <main class="container">
-<section class="hero"><h1>Demo Insights + Configuration Wizard</h1><p>Configure your demo narrative in multiple steps, then save it for the next walkthrough.</p><div class="tips"><strong>Tips:</strong> Save one config for executive demos and another for operational deep dives.</div></section>
-<section class="row"><div class="metric"><div class="label">Follow-up SLA met</div><div class="value">96%</div></div><div class="metric"><div class="label">Avg. cycle days</div><div class="value">18</div></div><div class="metric"><div class="label">Renewal win rate</div><div class="value">87%</div></div><div class="metric"><div class="label">Net revenue retention</div><div class="value">112%</div></div></section>
-<h2 class="section-title">Interactive Demo Playbook</h2><div class="metric"><div id="configSummary"></div></div>
-<section id="wizard" class="wizard-step">
-<div class="chip" id="stepLabel">Step 1 of 3</div>
-<div data-step="1" class="wizard-step"><h3>Audience & Style</h3><div class="stack"><label>Audience<select id="cfgAudience"><option>Exec Leadership</option><option>Revenue Operations</option><option>Customer Success</option></select></label><label>Demo Mode<select id="cfgMode"><option>Narrative</option><option>Hands-on</option><option>Technical</option></select></label></div></div>
-<div data-step="2" class="wizard-step hidden"><h3>Focus Areas</h3><div class="checkbox-row"><label><input type="checkbox" name="focus" value="Renewal Risk">Renewal Risk</label><label><input type="checkbox" name="focus" value="Pipeline Hygiene">Pipeline Hygiene</label><label><input type="checkbox" name="focus" value="Activity Quality">Activity Quality</label><label><input type="checkbox" name="focus" value="Forecast Confidence">Forecast Confidence</label></div></div>
-<div data-step="3" class="wizard-step hidden"><h3>Readiness</h3><label>Readiness Level<select id="cfgReadiness"><option>Standard</option><option>Accelerated</option><option>Deep Dive</option></select></label><p class="footer-note">When saved, this configuration persists in localStorage.</p></div>
-<div class="stack"><button class="btn" id="prevStep">Back</button><button class="btn" id="nextStep">Next</button><button class="btn" id="saveConfig">Save configuration</button></div>
-</section>
+<section class="hero"><h1>Insights Studio</h1><p>Multi-step configuration, readiness planning, and saved demo settings for repeatable storytelling.</p><div class="tips"><strong>Tips:</strong> Configure for your audience, save, then jump to Contacts or Pipeline with command palette.</div></section>
+<section class="grid-3"><div class="metric"><div class="label">Follow-up SLA</div><div class="value tag-ok">96%</div></div><div class="metric"><div class="label">Forecast Confidence</div><div class="value tag-warn">79%</div></div><div class="metric"><div class="label">Expansion Coverage</div><div class="value">88%</div></div></section>
+<h2>Interactive Demo Playbook</h2><div class="card"><div id="configSummary"></div></div>
+<section id="wizard" class="wizard-step"><div class="chip" id="stepLabel">Step 1 of 3</div>
+<div data-step="1" class="wizard-step"><h3>Audience & Story Style</h3><div class="stack"><label>Audience<select id="cfgAudience"><option>Exec Leadership</option><option>Revenue Operations</option><option>Customer Success</option><option>Board Update</option></select></label><label>Mode<select id="cfgMode"><option>Narrative</option><option>Hands-on</option><option>Technical</option></select></label></div></div>
+<div data-step="2" class="wizard-step hidden"><h3>Focus Areas</h3><div class="stack"><label><input type="checkbox" name="focus" value="Renewal Risk"> Renewal Risk</label><label><input type="checkbox" name="focus" value="Pipeline Hygiene"> Pipeline Hygiene</label><label><input type="checkbox" name="focus" value="Activity Quality"> Activity Quality</label><label><input type="checkbox" name="focus" value="Forecast Confidence"> Forecast Confidence</label></div></div>
+<div data-step="3" class="wizard-step hidden"><h3>Readiness Level</h3><label>Readiness<select id="cfgReadiness"><option>Standard</option><option>Accelerated</option><option>Deep Dive</option></select></label></div>
+<div class="toolbar"><button class="btn" id="prevStep">Back</button><button class="btn" id="nextStep">Next</button><button class="btn primary" id="saveConfig">Save configuration</button></div></section>
 </main>
 <script src="assets/app.js"></script>
 </body></html>

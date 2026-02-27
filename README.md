@@ -1,13 +1,10 @@
 # Velora's Playground
 
-A pure static demo website designed for storytelling walkthroughs.
+A pure static CRM demo with deep interactive behavior, no backend required.
 
 ## Run
 
-Open directly:
-- `index.html`
-
-Or use a static server:
+Open `index.html` directly or run:
 
 ```bash
 python3 -m http.server 8080
@@ -19,10 +16,11 @@ Then visit:
 - `http://localhost:8080/activity.html`
 - `http://localhost:8080/insights.html`
 
-## Demo notes
-- Contacts are shown as cinematic cards on the home page.
-- Clicking a contact opens FOE activity records in a side drawer.
-- You can add persistent account notes and edit profile fields (name, owner, stage, health).
-- Insights includes a 3-step configuration wizard with saved demo playbook settings.
-- Data is seeded into `localStorage` and no backend is used.
-- Theme preference is stored in `localStorage` key `crm_theme`.
+## Feature depth
+- Contact intelligence rail with searchable profiles.
+- FOE drawer with persistent notes and inline profile editing.
+- Kanban deal board with drag-and-drop stage movement.
+- Quick activity composer and task orchestrator.
+- Insights Studio with 3-step playbook configuration.
+- Command palette (`Ctrl/Cmd + K`) for rapid page actions.
+- LocalStorage persistence for all demo state.

@@ -1,35 +1,13 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Velora's Playground Pipeline</title>
-  <link rel="stylesheet" href="assets/styles.css" />
-</head>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Velora's Playground Pipeline</title><link rel="stylesheet" href="assets/styles.css" /></head>
 <body>
-  <header class="topbar">
-    <div class="brand">Velora's Playground <span class="brand-pill">DEMO</span></div>
-    <nav class="nav-links">
-      <a href="index.html">Contacts</a>
-      <a class="active" href="pipeline.html">Pipeline</a>
-      <a href="activity.html">Activity</a>
-      <a href="insights.html">Insights</a>
-    </nav>
-    <button id="themeToggle" class="btn">Theme</button>
-  </header>
-  <main class="container">
-    <section class="hero">
-      <h1>Pipeline Board</h1>
-      <p>A clean fake pipeline with realistic account context for demo storytelling.</p>
-      <div class="tips"><strong>Tips:</strong> Pair this table with FOE records from Contacts for a complete account narrative.</div>
-    </section>
-    <div class="table-wrap">
-      <table class="table">
-        <thead><tr><th>ID</th><th>Contact</th><th>Company</th><th>Stage</th><th>Owner</th><th>Health</th><th>ARR</th></tr></thead>
-        <tbody id="pipelineBody"></tbody>
-      </table>
-    </div>
-  </main>
-  <script src="assets/app.js"></script>
-</body>
-</html>
+<header class="topbar"><div class="brand">Velora's Playground <span class="brand-pill">DEMO</span></div><nav class="nav-links"><a href="index.html">Contacts</a><a class="active" href="pipeline.html">Pipeline</a><a href="activity.html">Activity</a><a href="insights.html">Insights</a></nav><button id="themeToggle" class="btn">Theme</button></header>
+<div id="commandPalette" class="command-palette"><input id="commandInput" placeholder="Type a command..."/><div id="commandList" class="stack"></div></div>
+<main class="container">
+<section class="hero"><h1>Pipeline Control Center</h1><p>Drag deals across stages to simulate progression and explain forecast confidence in real time.</p><div class="tips"><strong>Tips:</strong> Move cards into Closed Won while narrating risk mitigation and account expansion strategy.</div></section>
+<section class="grid-2"><div class="card"><h3>Deal Stage Board</h3><div id="kanban" class="kanban"></div></div><div class="card"><h3>Forecast Pulse</h3><div id="dealForecast"></div></div></section>
+<h3>Account Pipeline Table</h3><div class="table-wrap"><table class="table"><thead><tr><th>ID</th><th>Contact</th><th>Company</th><th>Stage</th><th>Owner</th><th>Health</th><th>ARR</th></tr></thead><tbody id="pipelineBody"></tbody></table></div>
+</main>
+<script src="assets/app.js"></script>
+</body></html>
