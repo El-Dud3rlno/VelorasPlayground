@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Velora's Playground</title><link rel="stylesheet" href="assets/styles.css" /></head>
+<body>
+<header class="topbar"><div class="brand">Velora's Playground <span class="brand-pill">DEMO</span></div><nav class="nav-links"><a class="active" href="index.html">Contacts</a><a href="pipeline.html">Pipeline</a><a href="activity.html">Activity</a><a href="insights.html">Insights</a></nav><button id="themeToggle" class="btn">Theme</button></header>
+<div id="commandPalette" class="command-palette"><input id="commandInput" placeholder="Type a command..."/><div id="commandList" class="stack"></div></div>
+<main class="container">
+<section class="hero"><h1>Velora CRM Dream Build</h1><p>Full interactive contact intelligence with edits, notes, tasks, and workflow controls. Press Ctrl/Cmd + K for command palette.</p><div class="tips"><strong>Tips:</strong> Open a contact, add notes, edit profile details, then move to pipeline and activity to show full continuity.</div></section>
+<section class="grid-4"><div class="metric"><div class="label">Total Pipeline</div><div id="mPipeline" class="value">-</div></div><div class="metric"><div class="label">Contacts</div><div id="mContacts" class="value">-</div></div><div class="metric"><div class="label">Open Tasks</div><div id="mOpenTasks" class="value">-</div></div><div class="metric"><div class="label">Risk Accounts</div><div id="mRisk" class="value">-</div></div></section>
+<h2>Contact Library</h2><div class="searchbar"><input id="contactSearch" placeholder="Search contact, company, owner, segment" /></div><section id="contactRail" class="card-rail"></section>
+</main>
+<aside id="foeDrawer" class="drawer"><button class="btn" id="closeDrawer">Close</button><div id="foeBody"></div></aside>
+<div id="editModal" class="modal"><div class="modal-card"><h3>Edit Contact Profile</h3><div class="stack"><input id="editName" placeholder="Name"/><input id="editOwner" placeholder="Owner"/><input id="editStage" placeholder="Stage"/><input id="editHealth" placeholder="Health"/></div><div class="stack"><button class="btn primary" id="saveEditBtn">Save</button><button class="btn" id="closeEditBtn">Cancel</button></div></div></div>
+<script src="assets/app.js"></script>
+</body></html>
